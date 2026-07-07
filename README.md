@@ -1,12 +1,11 @@
 # Life Lessons API Server
 
-This is the Express backend repository for the Life Lessons platform. It acts as the primary data and API provider for the client application, managing features from user authentication and admin controls, to premium lesson content via Stripe.
+This is the Express backend repository for the Life Lessons platform. It acts as the primary data and API provider for the client application, managing features from user authentication and admin controls.
 
 ## Features
 
 - **RESTful API Architecture:** Highly modular setup with isolated routes for lessons, users, favorites, reports, admin functionality, newsletters, and more.
 - **Authentication & Authorization:** Secure endpoints using JWT verification alongside distinct Admin routing controls (`middlewares/verifyJWT.js`, `middlewares/adminauth.js`).
-- **Premium Subscriptions:** Robust integration with Stripe, managing checkout sessions and listening to raw webhook events for payment success (`/api/webhook`).
 - **Database Integrated:** Uses MongoDB native driver connected efficiently on server initialization.
 - **Analytics & Reporting:** Specialized endpoints to gather user statistics such as Top Contributors and Most Saved Lessons, alongside an Admin dashboard backend route for platform metrics.
 
@@ -14,8 +13,6 @@ This is the Express backend repository for the Life Lessons platform. It acts as
 
 - **Node.js** & **Express.js (v5)**
 - **MongoDB** Native Driver
-- **Stripe** Integration (`stripe` npm package)
-- **jose-cjs** for JWT Token Verification
 - **dotenv** & **cors**
 
 ## Setup & Local Development
@@ -46,5 +43,3 @@ This is the Express backend repository for the Life Lessons platform. It acts as
 
 - `index.js`: Main entry point configuring Express, CORS, and mapping routes.
 - `config/`: Configurations like MongoDB connection `db.js`.
-- `routes/`: Modularized router files mapping to individual feature endpoints.
-- `middlewares/`: Security handling, admin auth checking, and generic JWT middleware layers.
